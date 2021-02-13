@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" lang="en">
+	<title>Blackpink Gallery</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap" rel="stylesheet">
+	<link rel="icon" href="bplogo1.png" type="image/icon type">
+</head>
+<body>
+
+	<div class="overlay" id="overlay"></div>
+	<!--This is the header-->
+	<header>
+		<div class="head-nav">
+			<a href="index.php"><img src="bp-logo.png" alt="kyuti"></a>
+			<nav>
+				<ul>
+					<li><a href="index.php" class="active">HOME</a></li>
+					<li><a>CATEGORY</a>
+						<ul class="dropper">
+							<li><a href="photo.php" class="navi">PHOTOS</a></li>
+							<li><a href="video.php" class="navi">MUSIC VIDEOS</a></li>
+							<li><a href="member.php" class="navi mem">MEMBERS</a></li>
+						</ul>
+					</li>
+					<li><a href="about.php">ABOUT US</a></li>	
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<!--UPLOAD FORM-->
+	<section>
+		<div class="wrapper">
+			<div class="upload-popup" id="myForm">
+				<div class="close">
+					<img src="images/blackpink/x-button.png" alt="x-button" onclick="closeForm()" width="20px">
+				</div>
+				<div class="uploadTitle">
+					<h2>Upload</h2>	
+				</div>
+				<form method="POST" action="includes/upload.php" class="form-container" enctype="multipart/form-data">
+					<input type="hidden" name="redirect" value="index.php">
+					<label for="File Name" class="labeled">Name </label>
+					<input type="text" name="galleryName" id="File Name" required placeholder="Name">
+					<label for="albumss"  class="labeled">Album </label>
+					<input type="text" name="album" list="albumList">
+					<datalist id="albumList">
+						<option value="Square One">Square One</option>
+						<option value="Square Two">Square Two</option>
+						<option value="As If It’s Your Last">As If It’s Your Last</option>
+						<option value="Blackpink">Blackpink</option>
+						<option value="Re:Blackpink">Re:Blackpink</option>
+						<option value="Square Up">Square Up</option>
+						<option value="BLACKPINK In Your Area">BLACKPINK In Your Area</option>
+						<option value="Kill This Love">Kill This Love</option>
+						<option value="Kill This Love (Japanese Version)">Kill This Love (Japanese Version)</option>
+						<option value="How You Like That">How You Like That</option>
+						<option value="Ice Cream (with Selena Gomez)">Ice Cream (with Selena Gomez)</option>
+						<option value="The Album">The Album</option>
+					</datalist>
+					<div class="check">
+						<label for="album-cover" >Album Cover : </label>
+						<input type="hidden" name="albumCover" value="no">
+						<input type="checkbox" name="albumCover" value="yes" id="album-cover">
+					</div>
+						<input type="file" name="file" required>
+					<div class="button">
+						<button type="submit" name="submit">UPLOAD</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<script>
+			function openForm() {
+			  document.getElementById("myForm").style.display = "block";
+			  document.getElementById("overlay").style.display = "block";
+			}
+
+			function closeForm() {
+			  document.getElementById("myForm").style.display = "none";
+			  document.getElementById("overlay").style.display = "none";
+			}
+
+			function check() {
+	    		return false;
+			}
+		</script>
+	
+	</section>
+	
+	<!--Main Section-->
+	<section>
+		<div class="wrapper1">
+			<div style="background-color: #222; text-align: center;">
+				<div class="slideshow-container" >
+					<div class="mySlides fade">
+					  	<div class="slideImg" style="filter: brightness(97%);">
+					  		<img src="poster.jpg">
+					  	</div>
+					</div>
+
+					<div class="mySlides fade">
+					  	<div class="slideImg" style="filter: brightness(97%);">
+					  		<img src="cover2.jpg">
+					  	</div>
+					</div>
+
+					<div class="mySlides fade">
+					  	<div class="slideImg">
+					  		<img src="cover3.png">
+					  	</div>
+					</div>
+				</div>
+			</div>
+			<div style="text-align:center; margin-top: 10px;">
+			  	<span class="dot"></span> 
+			  	<span class="dot"></span> 
+			  	<span class="dot"></span> 
+			</div>
+
+			<script>
+				var slideIndex = 0;
+				showSlides();
+
+				function showSlides() {
+			  		var i;
+			  
+			  		var slides = document.getElementsByClassName("mySlides");
+			  
+			  		var dots = document.getElementsByClassName("dot");
+			  
+			  		for (i = 0; i < slides.length; i++) {
+			    		slides[i].style.display = "none";  
+			  		}
+			  
+			  		slideIndex++;
+			  
+				  	if (slideIndex > slides.length) {slideIndex = 1}  
+				 
+				  	for (i = 0; i < dots.length; i++) {
+				    	dots[i].className = dots[i].className.replace(" activate", "");
+				  	}
+				  
+				  	slides[slideIndex-1].style.display = "block";  
+				  
+					dots[slideIndex-1].className += " activate";
+				  
+				  	setTimeout(showSlides, 5000); // Change image every 5 seconds
+				}
+			</script>
+
+			<div class="index-intro">
+				<div class="wrapper1">
+					<h1>blackpink</h1>
+					<p>BLACKPINK (블랙핑크) consists of 4 members: Jisoo, Lisa, Jennie, and Rosé. The band debuted on August 8th, 2016 under YG Entertainment. On October 23, 2018, BLACKPINK has officially signed with the U.S. label Interscope Records.</p>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="wrapper1">
+				<div class="profile-grid">
+					<div class="profile-container">
+						<img src="profile-jisoo.jpg" alt="jisoo" class="floater">
+					</div>
+					<div class="profile-container">
+						<img src="profile-lisa.jpg" alt="lisa" class="floater">
+					</div>
+					<div class="profile-container">
+						<img src="profile-jennie.jpg" alt="jennie" class="floater">
+					</div>
+					<div class="profile-container">
+						<img src="profile-rose.jpg" alt="kyuti" class="floater">
+					</div>
+				</div>
+			</div>
+		</section>
+	<section>
+		<div class="wrapper1">
+			<div class="title1">
+				<h2>CATEGORY</h2>	
+			</div>
+			<div class="category-grid">
+				<div class="icon2">
+					<a href="photo.php"><img src="photos-icon.png" width="150px;">
+					</a>
+				</div>
+
+				<div class="icon3">
+					<a href="video.php"><img src="videos-icon.png" width="150px;">
+					</a>
+				</div>
+				<div class="icon5">
+					<a href="member.php"><img src="member-icon.png" width="150px;"></a>
+				</div>
+				<div>
+					<h2>photos</h2>
+				</div>
+				<div>
+					<h2>Music videos</h2>
+				</div>
+				<div>
+					<h2>members</h2>
+				</div>
+			</div>
+		</div>	
+	</section>
+	<footer>
+		<div class="wrapper-center">
+		</div>
+	</footer>
+</body>
+</html>
